@@ -10,13 +10,9 @@ import javax.websocket.server.PathParam;
 @RestController
 @RequestMapping("/weather")
 public class WeatherController {
-    @GetMapping
-    public String welcome(){
-        return "Welcome to the weather API";
-    }
 
     @GetMapping("/{city}")
-    public String queryByCity(@PathVariable String city){
+    public String queryByCityName(@PathVariable String city){
         return "Querying for " + city;
     }
 

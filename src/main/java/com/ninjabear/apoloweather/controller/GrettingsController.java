@@ -1,19 +1,23 @@
 package com.ninjabear.apoloweather.controller;
 
-import jdk.jshell.Snippet;
-import jdk.net.SocketFlow;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class TestController {
+public class GrettingsController {
+    class MyString extends String{
+        public String sayGoodBye(){
+            return "Goodbye";
+        }
+    }
     @RequestMapping
     @ResponseBody
-    public ResponseEntity<String> function(){
-        return new ResponseEntity<>("Hello from Controller", HttpStatus.OK);
+    public <T> ResponseEntity<T extends String> sayHello() {
+        return new ResponseEntity<>(new MyString(), HttpStatus.OK);
     }
 
 }
