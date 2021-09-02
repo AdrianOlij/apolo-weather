@@ -9,15 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class GrettingsController {
-    class MyString extends String{
-        public String sayGoodBye(){
-            return "Goodbye";
-        }
-    }
+
     @RequestMapping
     @ResponseBody
-    public <T> ResponseEntity<T extends String> sayHello() {
-        return new ResponseEntity<>(new MyString(), HttpStatus.OK);
+    public ResponseEntity<String> sayHello() {
+        return new ResponseEntity<>("Hello", HttpStatus.OK);
     }
 
 }
