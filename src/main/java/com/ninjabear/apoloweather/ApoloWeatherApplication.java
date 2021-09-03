@@ -8,5 +8,7 @@ public class ApoloWeatherApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApoloWeatherApplication.class, args);
+
+
 	}
 }
